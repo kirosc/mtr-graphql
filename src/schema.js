@@ -1,14 +1,14 @@
-import { gql } from 'apollo-server'
+const { gql } = require('apollo-server');
 
-export const typeDefs = gql`
-  enum lines {
+const typeDefs = gql`
+  enum Lines {
     AEL
     TCL
     WRL
     TKL
   }
 
-  enum stations {
+  enum Stations {
     AIR
     AUS
     AWE
@@ -40,22 +40,22 @@ export const typeDefs = gql`
     YUL
   }
 
-  enum languages {
+  enum Languages {
     EN
     TC
   }
 
   type Query {
+    information(line: Lines, station: Stations, language: Languages): Information!
+    up(line: Lines, station: Stations, language: Languages): [Train]!
+    down(line: Lines, station: Stations, language: Languages): [Train]!
+  }
+
+  type Information {
     status: Int!
     message: String!
     url: String
-    curr_time: String!
-    sys_time: String!
-    isdelay: String!
-  }
-
-  type Direction {
-      trains: [Train]
+    isdelay: String
   }
 
   type Train {
@@ -65,3 +65,4 @@ export const typeDefs = gql`
     sequence: Int!
   }
 `
+module.exports = typeDefs;
