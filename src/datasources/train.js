@@ -7,11 +7,20 @@ class TrainAPI extends RESTDataSource {
   }
 
   async getStationSchedule(line, sta, lang = 'EN') {
-    const res = await this.get('', {
+    let res = await this.get('', {
       line,
       sta,
       lang
     })
+    res = {
+      status: res.status,
+      message: res.message,
+      url: res.url || null,
+      isdelay: res.isdelay,
+      up: res.data[`${line}-${sta}`].UP,
+      down: res.data[`${line}-${sta}`].DOWN
+    }
+
     return res
   }
 }
