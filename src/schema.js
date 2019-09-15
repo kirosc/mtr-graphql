@@ -55,14 +55,14 @@ const typeDefs = gql`
     status: Int!
     message: String!
     url: String
-    isdelay: String
+    isDelay: String
   }
 
   type Train {
-    eta: Int!
-    platform: Int!
+    eta: String!
+    platform: String!
     destination: String!
-    sequence: Int!
+    sequence: String!
   }
 `
 module.exports = typeDefs;
