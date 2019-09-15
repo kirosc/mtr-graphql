@@ -1,5 +1,5 @@
 # MTR GraphQL Server
-![GitHub](https://img.shields.io/github/license/kirosc/mtr-grqphql)
+![GitHub](https://img.shields.io/github/license/kirosc/mtr-graphql)
 
 MTR GraphQL Server uses [Apollo Server](https://github.com/apollographql/apollo-server) to set up a GraphQL server which resolves GraphQL queries related to trains arrival time based on the result returned from the HK MTR RESTful API.
 ## Usage
