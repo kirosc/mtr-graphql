@@ -4,14 +4,15 @@
   "description": "A GraphQL server for MTR train arrival time.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/index.js"
+    "dev": "nodemon ./src/index.js",
+    "start": "node ./src/index.js"
   },
   "keywords": [
     "graphql",
     "nodejs"
   ],
   "author": "Kiros Choi",
-  "license": "ISC",
+  "license": "GNU GPLv3",
   "dependencies": {
     "apollo-datasource-rest": "^0.6.4",
     "apollo-server": "^2.9.3",
